@@ -5,13 +5,22 @@ import KegList from './KegList';
 export default class KegControl extends React.Component {
   constructor(props){
     super(props);
-    this.state = {};
+    this.state = {
+      formVisble: false
+    };
   }
 
   render(){
+    let currentlyVisibleState = null;
+    if (this.state.formVisible){
+      currentlyVisibleState = <NewKegForm />
+    } else {
+      currentlyVisibleState = <KegList />
+    }
+
     return(
       <>
-
+        {currentlyVisibleState}
       </>
     );
   }
