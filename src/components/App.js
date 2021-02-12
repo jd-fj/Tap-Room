@@ -2,16 +2,21 @@
 import Header from "./Header";
 import KegControl from './KegControl';
 import React from 'react';
-import fizz from '../img/fizz.jpeg';
+import fizz2 from '../img/fizz2.jpeg';
 
 export default function App(props) {
   const appStyles = {
-    backgroundImage: `url("${fizz}")`
+    backgroundImage: `url("${fizz2}")`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
   }
+
   return (
-    <div style={appStyles}>
-    <Header/>
-    <KegControl/>
-    </div>
+    <>
+      <Header/>
+      <div style={appStyles}>
+        <KegControl/>
+      </div>
+    </>
   );
 }
