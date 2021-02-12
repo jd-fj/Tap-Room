@@ -8,12 +8,14 @@ export default function KegList(){
       name='Goose Neck Pilsner'
       brewery='Pillsbury Brewery'
       abv='6.7'
-      price='10'/>
+      price='10'
+      pints='124'/>
       <Keg 
       name='Chucks Brown Ale'
       brewery='Hilltop'
       abv='8'
-      price='15'/>
+      price='15'
+      pints='124'/>
     </>
   );
 }
