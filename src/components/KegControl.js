@@ -26,7 +26,7 @@ export default class KegControl extends React.Component {
         },
         {
           name: 'PNW IPA',
-          brewery: 'Mountain Water',
+          brewery: 'Moland Springs',
           abv: 8.8,
           description: 'Like sipping from a river',
           price: 14,
@@ -46,7 +46,8 @@ export default class KegControl extends React.Component {
   handleAddingNewKegToList = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
     this.setState({masterKegList: newMasterKegList,
-      formVisibleOnPage: false });
+      formVisibleOnPage: false 
+    });
   }
 
   render(){
