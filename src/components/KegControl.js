@@ -43,12 +43,18 @@ export default class KegControl extends React.Component {
   }
   // here we pass in state so it knows about the current state. We can use this to toggle a boolean, increment/decrement values with a counter, update the state of a game, etc. 
 
+  handleAddingNewKegToList = (newKeg) => {
+    const newMasterKegList = this.state.masterKegList.concat(newKeg);
+    this.setState({masterKegList: newMasterKegList,
+      formVisibleOnPage: false });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let btnText = null;
 
     if (this.state.formVisible){
-      currentlyVisibleState = <NewKegForm />
+      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
       btnText = "Return to Keg List";
     } else {
       currentlyVisibleState = <KegList kegList={this.state.masterKegList}/>
