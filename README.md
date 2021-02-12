@@ -1,5 +1,5 @@
 
-
+BUILD A STATIC SITE FIRST!
 
 1. As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store).
 2. As a user, I want to submit a form to add a new keg to a list.

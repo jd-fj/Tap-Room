@@ -1,11 +1,12 @@
 import './App.css';
 import Header from "./Header";
+import KegList from './KegList';
 
 export default function App() {
   return (
     <>
     <Header/>
-    <h1>Tap Room App</h1>
+    <KegList/>
     </>
   );
 }
