@@ -1,12 +1,14 @@
 import React from 'react';
 import NewKegForm from './NewKegForm';
 import KegList from './KegList';
+import KegDetail from './KegDetail';
 
 export default class KegControl extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       formVisble: false,
+      selectedKeg: null,
       masterKegList: [
         {
           name: 'Goose Neck Pilsner',
@@ -50,15 +52,24 @@ export default class KegControl extends React.Component {
     });
   }
 
+  handleChangingSelectedKeg = (id) => {
+    const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+    this.setState({selectedKeg: selectedKeg
+    });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let btnText = null;
-
-    if (this.state.formVisible){
+    if (this.state.selectedKeg != null) {
+      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} />
+      btnText = "Return to Keg List";
+    }
+    else if (this.state.formVisible){
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
       btnText = "Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.masterKegList}/>
+      currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg}/>
       btnText = "Add Keg";
     }
 
