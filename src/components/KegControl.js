@@ -19,18 +19,19 @@ export default class KegControl extends React.Component {
 
   render(){
     let currentlyVisibleState = null;
-    let addKegBtn = null;
+    let btnText = null;
     if (this.state.formVisible){
       currentlyVisibleState = <NewKegForm />
+      btnText = "Return to Keg List";
     } else {
       currentlyVisibleState = <KegList />
-      addKegBtn = <button onClick={this.handleClick}>Add a Keg</button>
+      btnText = "Add Keg";
     }
 
     return(
       <>
         {currentlyVisibleState}
-        {addKegBtn}
+        <button onClick={this.handleClick}>{btnText}</button>
       </>
     );
   }
