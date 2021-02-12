@@ -6,8 +6,8 @@ export default function Keg(props){
     <>
       <h2>{props.name}</h2>
       <h4>Brewery: {props.brewery}</h4>
-      <h4>ABV: {props.abv}</h4>
       <h4>Description: {props.description}</h4>
+      <h4>ABV: {props.abv}</h4>
       <h4>price: {props.price}</h4>
       <h4>Pints Left: {props.pints}</h4>
       <hr/>

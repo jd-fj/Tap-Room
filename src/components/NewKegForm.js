@@ -9,8 +9,8 @@ export default function NewKegForm(props){
     props.onNewKegCreation({
       name: event.target.name.value,
       brewery: event.target.brewery.value,
-      abv: event.target.abv.value,
       description: event.target.description.value,
+      abv: event.target.abv.value,
       price: event.target.price.value,
       pints: event.target.pints.value,
       id: v4()
@@ -28,13 +28,13 @@ export default function NewKegForm(props){
           type='text'
           name='brewery'
           placeholder='Brewery' />
+          <textarea
+            name='description'
+            placeholde='Beverage Description' />
         <input 
           type='float'
           name='abv'
           placeholder='ABV number' />
-        <textarea
-          name='description'
-          placeholde='Beverage Description' />
         <input 
           type='float'
           name='price'

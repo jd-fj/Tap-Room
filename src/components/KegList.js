@@ -9,8 +9,8 @@ export default function KegList(props){
         <Keg 
           name={keg.name}
           brewery={keg.brewery}
-          abv={parseFloat(keg.abv)}
           description={keg.description}
+          abv={parseFloat(keg.abv)}
           price={parseFloat(keg.price)}
           pints={parseInt(keg.pints)}
           key={index} 
