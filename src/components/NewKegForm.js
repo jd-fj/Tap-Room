@@ -1,17 +1,20 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 export default function NewKegForm(props){
 
   function handleNewKegFormSubmission(event){
     event.preventDefault();
-    console.log(event.target.name.value);
-    console.log(event.target.brewery.value);
-    console.log(event.target.abv.value);
-    console.log(event.target.description.value);
-    console.log(event.target.price.value);
-    console.log(event.target.pints.value);
-
+    props.onNewKegCreation({
+      name: event.target.name.value,
+      brewery: event.target.brewery.value,
+      abv: event.target.abv.value,
+      description: event.target.description.value,
+      price: event.target.price.value,
+      pints: event.target.pints.value,
+      id: v4()
+    });
   }
 
   return (
@@ -26,14 +29,14 @@ export default function NewKegForm(props){
           name='brewery'
           placeholder='Brewery' />
         <input 
-          type='number'
+          type='float'
           name='abv'
           placeholder='ABV number' />
         <textarea
           name='description'
           placeholde='Beverage Description' />
         <input 
-          type='number'
+          type='float'
           name='price'
           placeholder='Price Per Pint' />
         <input 
@@ -45,3 +48,7 @@ export default function NewKegForm(props){
     </>
   );
 }
+
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
+};
