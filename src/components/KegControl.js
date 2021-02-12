@@ -6,7 +6,33 @@ export default class KegControl extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      formVisble: false
+      formVisble: false,
+      masterKegList: [
+        {
+          name: 'Goose Neck Pilsner',
+          brewery: 'Pillsbury Brewery',
+          abv: 6.7,
+          description: 'has a pill-y, light flavor, great for the whole family',
+          price: 10,
+          pints: 124
+        },
+        {
+          name: 'Chucks Brown Ale',
+          brewery: 'Hilltop',
+          abv: 8,
+          description: 'Chunky, dark, malty flaves',
+          price: 15,
+          pints: 124
+        },
+        {
+          name: 'PNW IPA',
+          brewery: 'Mountain Water',
+          abv: 8.8,
+          description: 'Like sipping from a river',
+          price: 14,
+          pints: 124
+        }
+      ]
     };
   }
 
@@ -20,11 +46,12 @@ export default class KegControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let btnText = null;
+
     if (this.state.formVisible){
       currentlyVisibleState = <NewKegForm />
       btnText = "Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList />
+      currentlyVisibleState = <KegList kegList={this.state.masterKegList}/>
       btnText = "Add Keg";
     }
 
