@@ -16,7 +16,8 @@ export default class KegControl extends React.Component {
           abv: 6.7,
           description: 'has a pill-y, light flavor, great for the whole family',
           price: 10,
-          pints: 124
+          pints: 124,
+          id: 0
         },
         {
           name: 'Chucks Brown Ale',
@@ -24,7 +25,8 @@ export default class KegControl extends React.Component {
           abv: 8,
           description: 'Chunky, dark, malty flaves',
           price: 15,
-          pints: 124
+          pints: 124,
+          id: 1
         },
         {
           name: 'PNW IPA',
@@ -32,7 +34,8 @@ export default class KegControl extends React.Component {
           abv: 8.8,
           description: 'Like sipping from a river',
           price: 14,
-          pints: 124
+          pints: 124,
+          id: 2
         }
       ]
     };
@@ -65,12 +68,20 @@ export default class KegControl extends React.Component {
     });
   }
 
+  handleDeletingKeg = (id) => {
+    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
+    this.setState({
+      masterKegList: newMasterKegList,
+      selectedKeg: null
+    });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let btnText = null;
 
     if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} />
+      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onClickingDelete = {this.handleDeletingKeg }/>
       btnText = "Return to Keg List";
     }
     else if (this.state.formVisible){

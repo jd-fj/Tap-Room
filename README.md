@@ -16,3 +16,5 @@ As a user, I want a keg to update to say "Out of Stock" once it's empty.
 As a user, I want kegs with less than 10 pints to include a message that says "Almost Empty" so I can try a pint before it's gone!
 As a user, I want to have kegs prices to be color-coded for easy readability. This could be based on their price, the style of beer or kombucha, or the amount of pints left.
 As a user, I want this application to be nicely styled. (Use stylesheets and CSS objects!)
+
+
