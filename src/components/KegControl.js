@@ -39,9 +39,16 @@ export default class KegControl extends React.Component {
   }
 
   handleClick = () => {
-    this.setState(prevState =>({
-      formVisible: !prevState.formVisible
-    }));
+    if(this.state.selectedKeg != null){
+      this.setState({
+        formVisible: false,
+        selectedKeg: null
+      });
+    } else {
+      this.setState(prevState =>({
+        formVisible: !prevState.formVisible,
+      }));
+    }
   }
   // here we pass in state so it knows about the current state. We can use this to toggle a boolean, increment/decrement values with a counter, update the state of a game, etc. 
 
@@ -61,6 +68,7 @@ export default class KegControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let btnText = null;
+
     if (this.state.selectedKeg != null) {
       currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} />
       btnText = "Return to Keg List";
