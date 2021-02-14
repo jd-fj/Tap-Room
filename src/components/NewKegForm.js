@@ -42,7 +42,7 @@ export default function NewKegForm(props){
         <input 
           type='number'
           name='pints'
-          placeholder=' Enter 127 for New Keg' />
+          placeholder='Enter 127 for New Keg' />
         <button type='submit'>Add New Keg</button>
       </form>
     </>

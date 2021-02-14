@@ -77,23 +77,48 @@ export default class KegControl extends React.Component {
   }
 
   handleSellingPint = (id) => {
-    const kegSellOnePint = this.state.masterKegList.filter(keg => keg.id === id).pints - 1;
-    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id).concat(kegSellOnePint);
-    
-    // selectedKeg.pints.setState({pints: pints - 1});
-    // const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id)
     this.setState({
-      masterKegList: newMasterKegList,
-      selectedKeg: null
+      ...this.state, 
+      selectedKeg: null,
+      masterKegList: this.state.masterKegList.map((item) => {
+        if (item.id === id) {
+          return{
+            ...item,
+            pints: (item.pints -1)
+          };
+        }
+      return item; 
+      })
     })
+    // const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0]; 
+    // console.log(selectedKeg);
+    // console.log(selectedKeg.setState({pints: 10}))
   }
+
+
+  // handleSellingPint = (id) => {
+  //   const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id);
+  //   const newPints = selectedKeg.pints - 1;
+  //   console.log(selectedKeg);
+  //   const updatedKeg = this.selectedKeg.setState({pints: newPints});
+  //   console.log(updatedKeg);
+  //   // const filteredKegList = this.state.masterKegList.filter(keg => keg.id !== id);
+  //   const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id).concat(updatedKeg)
+  //   // const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id).concat(kegSellOnePint);
+  //   // selectedKeg.pints.setState({pints: pints - 1});
+  //   // const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id)
+  //   this.setState({
+  //     masterKegList: newMasterKegList,
+  //     selectedKeg: null
+  //   })
+  // }
 
   render(){
     let currentlyVisibleState = null;
     let btnText = null;
 
     if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingSell={this.handleSellingPint} onClickingDelete = {this.handleDeletingKeg }/>
+      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingSell={this.handleSellingPint} onClickingDelete = {this.handleDeletingKeg}/>
       btnText = "Return to Keg List";
     }
     else if (this.state.formVisible){

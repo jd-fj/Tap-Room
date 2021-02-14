@@ -24,6 +24,6 @@ Keg.propTypes = {
   description: PropTypes.string,
   price: PropTypes.number,
   pints: PropTypes.number,
-  id: PropTypes.string,
+  id: PropTypes.number,
   whenKegClicked: PropTypes.func
 }
