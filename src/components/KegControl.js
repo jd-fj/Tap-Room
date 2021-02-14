@@ -53,15 +53,15 @@ export default class KegControl extends React.Component {
       }));
     }
   }
-  // here we pass in state so it knows about the current state. We can use this to toggle a boolean, increment/decrement values with a counter, update the state of a game, etc. 
 
+  
   handleAddingNewKegToList = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
     this.setState({masterKegList: newMasterKegList,
       formVisible: false 
     });
   }
-
+  
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
     this.setState({selectedKeg: selectedKeg
@@ -76,12 +76,24 @@ export default class KegControl extends React.Component {
     });
   }
 
+  handleSellingPint = (id) => {
+    const kegSellOnePint = this.state.masterKegList.filter(keg => keg.id === id).pints - 1;
+    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id).concat(kegSellOnePint);
+    
+    // selectedKeg.pints.setState({pints: pints - 1});
+    // const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id)
+    this.setState({
+      masterKegList: newMasterKegList,
+      selectedKeg: null
+    })
+  }
+
   render(){
     let currentlyVisibleState = null;
     let btnText = null;
 
     if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onClickingDelete = {this.handleDeletingKeg }/>
+      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingSell={this.handleSellingPint} onClickingDelete = {this.handleDeletingKeg }/>
       btnText = "Return to Keg List";
     }
     else if (this.state.formVisible){
