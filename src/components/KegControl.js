@@ -90,28 +90,7 @@ export default class KegControl extends React.Component {
       return item; 
       })
     })
-    // const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0]; 
-    // console.log(selectedKeg);
-    // console.log(selectedKeg.setState({pints: 10}))
   }
-
-
-  // handleSellingPint = (id) => {
-  //   const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id);
-  //   const newPints = selectedKeg.pints - 1;
-  //   console.log(selectedKeg);
-  //   const updatedKeg = this.selectedKeg.setState({pints: newPints});
-  //   console.log(updatedKeg);
-  //   // const filteredKegList = this.state.masterKegList.filter(keg => keg.id !== id);
-  //   const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id).concat(updatedKeg)
-  //   // const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id).concat(kegSellOnePint);
-  //   // selectedKeg.pints.setState({pints: pints - 1});
-  //   // const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id)
-  //   this.setState({
-  //     masterKegList: newMasterKegList,
-  //     selectedKeg: null
-  //   })
-  // }
 
   render(){
     let currentlyVisibleState = null;
