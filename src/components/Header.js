@@ -2,6 +2,6 @@ import React from "react";
 
 export default function Header(){
   return (
-    <h1>Tap Room Header</h1>
+    <h1>Tay's Tap Room</h1>
   )
 }
