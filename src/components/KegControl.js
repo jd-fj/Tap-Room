@@ -81,9 +81,9 @@ export default class KegControl extends React.Component {
       ...this.state, 
       selectedKeg: null,
       masterKegList: this.state.masterKegList.map((keg) => {
-        if (item.id === id) {
+        if (keg.id === id) {
           return{
-            ...item,
+            ...keg,
             pints: (keg.pints -1)
           };
         }
