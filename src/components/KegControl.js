@@ -25,7 +25,7 @@ export default class KegControl extends React.Component {
           abv: 8,
           description: 'Chunky, dark, malty flaves',
           price: 15,
-          pints: 1,
+          pints: 127,
           id: 1
         },
         {
@@ -34,7 +34,7 @@ export default class KegControl extends React.Component {
           abv: 8.8,
           description: 'Like sipping from a river',
           price: 14,
-          pints: 1,
+          pints: 127,
           id: 2
         }
       ]
