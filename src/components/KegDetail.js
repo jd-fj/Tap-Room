@@ -10,10 +10,8 @@ export default function KegDetail(props){
       <h3>The {keg.name} from {keg.brewery}</h3>
       <h5>Description: {keg.description}</h5>
       <h5>ABV: {keg.abv}</h5>
-      <h5>Price per pint: {keg.price}</h5>
-      {/* {condition ? exprIfTrue : exprIfFalse} */}
+      <h5>Price: ${keg.price}</h5>
       {keg.pints === 0 ? <h5>No More Pints Left</h5> : <h5>{keg.pints}</h5>} 
-      {/* <h5>Pints Left In Keg: {keg.pints}</h5> */}
       <button onClick={()=> onClickingDelete(keg.id)}>Delete Keg</button>
       {keg.pints > 0 ? <button onClick={()=> onClickingSell(keg.id)}>Sell a Pint from this Keg</button> : null}
       <hr/>

@@ -10,7 +10,8 @@ export default function Keg(props){
         <h4>Description: {props.description}</h4>
         <h4>ABV: {props.abv}</h4>
         <h4>price: {props.price}</h4>
-        <h4>Pints Left: {props.pints}</h4>
+        {/* <h4>Pints Left: {props.pints}</h4> */}
+        {props.pints === 0 ? <h5>We're out!</h5> : <h5>Pints Left: {props.pints}</h5>}
         <hr/>
       </div>
     </>
