@@ -26,9 +26,8 @@ Node
 6. As a user, I want to be able to delete a keg.
 7. As a user, I want a keg to update to say "Out of Stock" once it's empty.
 
-
-
-COMPONENT TREE GOES HERE
+## Component Diagram
+![](./readMeAssets/diagram.png)
 
 ## Setup & Installation
 
