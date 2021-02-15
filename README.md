@@ -1,7 +1,7 @@
 
 # Tay's Tap Room
 
-#### Keep track of the kegs in stock, how many pints are left, and other details about the beer itself. This site incorporates Create, Read, and Delete functionality. Created for an Epicodus independent project displaying React fundamentals. 
+#### React app created for a restaurant to keep track of kegs in stock, how many pints are left, and other details about the beer itself. This site incorporates Create, Read, and Delete functionality. Designed for an Epicodus independent project, showcasing React fundamentals. 
 
 ## Technologies Used 
 React
@@ -21,7 +21,7 @@ Node
 4. As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints.
 5. As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
 
-* **Further Exploration**
+  * **Further Exploration**
 
 6. As a user, I want to be able to delete a keg.
 7. As a user, I want a keg to update to say "Out of Stock" once it's empty.
