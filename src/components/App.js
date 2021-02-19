@@ -1,4 +1,4 @@
-import {Container, Row, Col, Jumbotron} from 'react-bootstrap';
+import {Container, Jumbotron} from 'react-bootstrap';
 // import './App.css';
 import Header from "./Header";
 import KegControl from './KegControl';

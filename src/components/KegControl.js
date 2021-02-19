@@ -17,7 +17,7 @@ export default class KegControl extends React.Component {
           description: 'has a pill-y, light flavor, great for the whole family',
           price: 10,
           pints: 1,
-          id: 0
+          id: "0"
         },
         {
           name: 'Chucks Brown Ale',
@@ -26,7 +26,7 @@ export default class KegControl extends React.Component {
           description: 'Chunky, dark, malty flaves',
           price: 15,
           pints: 127,
-          id: 1
+          id: "1"
         },
         {
           name: 'PNW IPA',
@@ -35,7 +35,7 @@ export default class KegControl extends React.Component {
           description: 'Like sipping from a river',
           price: 14,
           pints: 127,
-          id: 2
+          id: "2"
         }
       ]
     };
@@ -64,7 +64,8 @@ export default class KegControl extends React.Component {
   
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
-    this.setState({selectedKeg: selectedKeg
+    this.setState({
+      selectedKeg: selectedKeg
     });
   }
 
